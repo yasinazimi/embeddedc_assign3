@@ -2,7 +2,7 @@
 48430 Embedded C - Advanced Assignment
 Name: Yasin Azimi
 Student ID: 11733490
-Date of submission: 07/06/2016
+Date of submission: 08/06/2016
 A brief statement on what you could achieve (less than 50 words): High Distinction
 A brief statement on what you could NOT achieve (less than 50 words): Nothing
 
@@ -133,12 +133,12 @@ int delhead(node_n**head) {
 	node_n* new_node = NULL;	/*Declares NULL to the initialised 'new_node' which will be the temporary new head*/
 	if (*head != NULL) {	/*Checks if the first element is not empty, if so an element can be removed from*/
 		new_node = (*head)->next;	/*Set the new head to the next element*/
-		free(*head);	/*Clears the memory buffer for the */
+		free(*head);	/*Deallocates the node*/
 		*head = new_node;	/*Set the first pointer to the temporary 'new_node' head*/
-		return 1;
+		return 1;	/*Return's status 1 in an instance where the head node could not be deleted*/
 	}
 	else {
-		return 0;	/*Return's 0 if the first element of the linked list is empty*/
+		return 0;	/*Return's status 0 if the first element of the linked list is empty*/
 	}
 }
 
@@ -154,7 +154,7 @@ int delvowels(node_n**head) {
         char key = v[q];	/*Initialises the keyword 'key' to hold the current instance of vowels to be removed*/
 		while (temp != NULL && temp->c == key) {	/*Condition is passed to check if head node itself holds the key or multiple instances of key*/
             *head = temp->next;	/*Temporary head is updated*/
-            free(temp);		/*Clears memory space for allocation*/
+            free(temp);		/*Deallocates the node*/
             temp = *head;	/*Next head is updated from the temporary*/
 			r++; }	/*Increment and update the count of vowels removed*/
 			
@@ -165,10 +165,10 @@ int delvowels(node_n**head) {
             if (temp == NULL)	/*Checks if no vowels exist in the linked list*/
 				continue;
             pre->next = temp->next;		/*Removes the node from the list*/
-            free(temp);		/*Clears memory space for allocation*/
+            free(temp);		/*Deallocates the node*/
             temp = pre->next;	/*Temporary is updated for the next iteration*/
             r++; 	/*Increment and update the count of vowels removed*/
         }
     }
-	return (r > 0);	/*Only returns a 'success' if the vowels removed from the stream are more than 0*/
+	return 0;	/*Only returns a status 0 if the vowels were successfully removed*/
 }
