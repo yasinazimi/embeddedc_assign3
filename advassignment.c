@@ -3,11 +3,8 @@
 Name: Yasin Azimi
 Student ID: 11733490
 Date of submission: 08/06/2016
-A brief statement on what you could achieve (less than 50 words): High Distinction
-A brief statement on what you could NOT achieve (less than 50 words): Nothing
-
-
 ***************************************************************************/
+
 
 /**************************************************************************
 List of header files and preprocessing directives
