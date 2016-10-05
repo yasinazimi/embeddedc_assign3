@@ -1,1 +1,0 @@
-This assignment solely uses C to store and manipulate a string of dynamic length using a linked list.
