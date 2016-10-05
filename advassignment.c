@@ -20,6 +20,7 @@ struct node{
 	char c;		/*variable c is a char to store an input character*/
 	struct node *next;	/*next is a pointer to the next struct node*/
 };
+
 typedef struct node node_n;	/*typedef assigns alternative variable 'node_n' to the existing struct 'node'*/
 
 
